@@ -4,12 +4,13 @@ const hora = document.querySelector('.hour')
 const minuto = document.querySelector('.minute')
 const segundos = document.querySelector('.second')
 const btnStop = document.querySelector(".parar")
+const btnReiniciar = document.querySelector(".reiniciar")
 
 class Timer{
-    constructor(hour,minutes,seconds){
-        this.hour = parseInt(hour,10)
-        this.minutes = parseInt(minutes,10)
-        this.seconds = parseInt(seconds,10)
+    constructor(){
+        this.hour = 0
+        this.minutes = 0
+        this.seconds = 0
         this.intervalId = null
     }
 
@@ -22,6 +23,9 @@ class Timer{
     }
 
     iniciar() {
+        this.hour = parseInt(hora.value,10)
+        this.minutes = parseInt(minuto.value,10)
+        this.seconds = parseInt(segundos.value,10)
         if(this.verificarSeNumero(this.hour)){
             this.hour = 0
         }
@@ -61,15 +65,29 @@ class Timer{
         clearInterval(this.intervalId)
         console.log('parou')
     }
+    reiniciar() {
+        clearInterval(this.intervalId);
+        this.hour = 0;
+        this.minutes = 0;
+        this.seconds = 0;
+        tempo.innerHTML = `${this.formatarNumeros(this.hour)}:${this.formatarNumeros(this.minutes)}:${this.formatarNumeros(this.seconds)}`;
+    }
 }
 
 
+const timer = new Timer()
 
 btnIniciar.addEventListener("click",()=>{
-    const timer = new Timer(hora.value,minuto.value,segundos.value)
     timer.iniciar()
 })
 
+btnStop.addEventListener("click",()=>{
+    timer.parar()
+})
+
+btnReiniciar.addEventListener('click',()=>{
+    timer.reiniciar()
+})
 
 
 
