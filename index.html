@@ -9,59 +9,69 @@
   </head>
   <body>
     <main class="relogio_container">
-        <div class="relogio">
-          <div id="timer" class="timer">
-            <span class="span-hour">00</span>
-            :
-            <span class="span-minutes">00</span>
-            :
-            <span class="span-seconds">00</span>
-          </div>
+      <div class="relogio">
+        <div id="timer" class="timer">
+          <span class="span-hour">00</span>
+          :
+          <span class="span-minutes">00</span>
+          :
+          <span class="span-seconds">00</span>
         </div>
+      </div>
 
-          <section class="align-inputs">
-            <div class="input-container">
-              <label for="hour">Horas</label>
-              <input type="number" name="" id="hour"
-              class="inputHour" max="99" min="0" />
-            </div>
-            <div class="input-container">
-              <label for="minute">Minutos</label>
-              <input
-                type="number"
-                name=""
-                id="minute"
-                class="inputMinute"
-                max="59"
-                min="0"
-              />
-            </div>
-            <div class="input-container">
-              <label for="second">Segundos</label>
-              <input
-                type="number"
-                name=""
-                id="second"
-                class="inputSecond"
-                max="59"
-                min="0"
-              />
-            </div>
-          </section>
-          <div class="buttons">
-            <div class="btn">
-              <button id="btn-start " class="btnStart ">Iniciar</button>
-            </div>
-            <div class="btn">
-              <button id="btn-stop " class="btnStop disappear">Parar</button>
-            </div>
-            <div class="btn">
-              <button id="btn-restart " class="btnRestart disappear ">Reiniciar</button>
-            </div>
-            <div class="btn">
-              <button id="btn-continue " class="btnContinue disappear ">Continuar</button>
-            </div>
-          </div>
+      <section class="align-inputs">
+        <div class="input-container">
+          <label for="hour">Horas</label>
+          <input
+            type="number"
+            name=""
+            id="hour"
+            class="inputHour"
+            max="99"
+            min="0"
+          />
+        </div>
+        <div class="input-container">
+          <label for="minute">Minutos</label>
+          <input
+            type="number"
+            name=""
+            id="minute"
+            class="inputMinute"
+            max="59"
+            min="0"
+          />
+        </div>
+        <div class="input-container">
+          <label for="second">Segundos</label>
+          <input
+            type="number"
+            name=""
+            id="second"
+            class="inputSecond"
+            max="59"
+            min="0"
+          />
+        </div>
+      </section>
+      <div class="buttons">
+        <div class="btn">
+          <button id="btn-start " class="btnStart">Iniciar</button>
+        </div>
+        <div class="btn">
+          <button id="btn-stop " class="btnStop disappear">Parar</button>
+        </div>
+        <div class="btn">
+          <button id="btn-continue " class="btnContinue disappear">
+            Continuar
+          </button>
+        </div>
+        <div class="btn">
+          <button id="btn-restart " class="btnRestart disappear">
+            Reiniciar
+          </button>
+        </div>
+      </div>
     </main>
   </body>
   <script src="./script.js"></script>

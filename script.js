@@ -89,7 +89,6 @@ class Timer {
     toggleButtonVisibility(btnStart, false);
     toggleButtonVisibility(btnRestart, true);
     toggleButtonVisibility(btnStop, true);
-    toggleButtonVisibility(btnContinue, true);
   }
   stop() {
     clearInterval(this.interval);
@@ -125,6 +124,7 @@ btnStart.addEventListener("click", () => {
 
 btnStop.addEventListener("click", () => {
   timer.stop();
+  toggleButtonVisibility(btnContinue, true);
 });
 
 btnRestart.addEventListener("click", () => {

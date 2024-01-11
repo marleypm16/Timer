@@ -1,77 +1,77 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.relogio_container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.relogio_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.relogio{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding: 2em;
-    height: 400px;
-    border-radius: 50%;
-    border: 1px solid #000;
+.relogio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 2em;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid #000;
 }
 body {
-    background-color: rgb(28, 28, 28);
-  }
-  
-  label {
-    font-size: 30px;
-    padding-right: 20px;
-    color: white;
-  }
-  
-  input {
-    font-size: 20px;
-  }
-  
-  button {
-    font-size: 20px;
-    background-color: rgb(54, 236, 54);
-    border-radius: 10%;
-    padding: 10px 20px;
-  }
-  
-  .timer {
-    font-size: 75px;
-    text-align: center;
-    color: white;
-    text-wrap: nowrap;
-  }
-  
-  .input-container {
-    margin: 20px;
-  }
-  
-  .align-inputs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btn {
-    text-align: center;
-  }
+  background-color: rgb(28, 28, 28);
+}
 
-  .disappear{
-    display: none;
-  }
-  .show{
-    display: flex;
-  }
-  .buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
+label {
+  font-size: 30px;
+  padding-right: 20px;
+  color: white;
+}
+
+input {
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+  background-color: rgb(54, 236, 54);
+  border-radius: 10%;
+  padding: 10px 20px;
+}
+
+.timer {
+  font-size: 75px;
+  text-align: center;
+  color: white;
+  text-wrap: nowrap;
+}
+
+.input-container {
+  margin: 20px;
+}
+
+.align-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  text-align: center;
+}
+
+.disappear {
+  display: none;
+}
+.show {
+  display: flex;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
