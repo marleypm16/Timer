@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    width: 400px;
+    padding: 2em;
     height: 400px;
     border-radius: 50%;
     border: 1px solid #000;
@@ -43,7 +43,7 @@ body {
   }
   
   .timer {
-    font-size: 100px;
+    font-size: 75px;
     text-align: center;
     color: white;
     text-wrap: nowrap;
