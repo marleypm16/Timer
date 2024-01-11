@@ -15,16 +15,33 @@ class Timer{
         return String(time).padStart(2, '0')
     }
 
-    iniciar() {
-        const intervalId = setInterval(() => {
+    verificarSeNumero(valor){
+        return isNaN(valor)
+    }
 
+    iniciar() {
+        if(this.verificarSeNumero(this.hour)){
+            this.hour = 0
+        }
+        if(this.verificarSeNumero(this.minutes)){
+            this.minutes = 0
+        }
+        if(this.verificarSeNumero(this.seconds)){
+            this.seconds = 0
+        }
+        if (this.hour == 0 && this.minutes == 0 && this.seconds == 0) {
+           return alert("insira um tempo")
+        }
+        const intervalId = setInterval(() => {
+         
 
             if(this.minutes == 0 && this.seconds == 0 && this.hour > 0){
                 this.hour--
-            }
-            if(this.minutes == 0 && this.seconds == 0 && this.hour == 0){
                 this.minutes = 60
             }
+            // if(this.minutes == 0 && this.seconds == 0){
+            //     this.minutes = 60
+            // }
             if(this.seconds == 0 && this.minutes > 0){
                 this.minutes--
                 this.seconds = 60
@@ -32,11 +49,10 @@ class Timer{
             this.seconds--
             tempo.innerHTML = `${this.formatarNumeros(this.hour)}:${this.formatarNumeros(this.minutes)}:${this.formatarNumeros(this.seconds)}`;
             console.log(`Time remaining: ${this.time}s`);
-
             if (this.hour == 0 && this.minutes == 0 && this.seconds == 0) {
-                clearInterval(intervalId);
-                console.log("Timer expired!");
-            }
+                clearInterval(intervalId)
+                return alert("fim")
+             }
         }, 1000);
     }
 }
