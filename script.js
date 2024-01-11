@@ -1,122 +1,113 @@
-const btnIniciar = document.querySelector(".iniciar")
-const tempo = document.querySelector('.timer')
-const horaInput = document.querySelector('.hour')
-const minutoInput = document.querySelector('.minute')
-const segundosInput = document.querySelector('.second')
-const horaSpan = document.querySelector('.span-hora')
-const minutoSpan = document.querySelector('.span-minutos')
-const segundosSpan = document.querySelector('.span-segundos')
-const btnStop = document.querySelector(".parar")
-const btnReiniciar = document.querySelector(".reiniciar")
-const btnContinuar = document.querySelector(".continuar")
+const btnStart = document.querySelector(".btnStart")
+const inputHour = document.querySelector('.inputHour')
+const inputMinute = document.querySelector('.inputMinute')
+const inputSecond = document.querySelector('.inputSecond')
+const hourSpan = document.querySelector('.span-hour')
+const minuteSpan = document.querySelector('.span-minutes')
+const secondSpan = document.querySelector('.span-seconds')
+const btnStop = document.querySelector(".btnStop")
+const btnRestart = document.querySelector(".btnRestart")
+const btnContinue = document.querySelector(".btnContinue")
 
 class Timer{
     constructor(){
         this.hour = 0
         this.minutes = 0
         this.seconds = 0
-        this.intervalId = null
+        this.interval = null
     }
 
-    formatarNumeros(time){
+    formatNumbersToStringWithTwoCharacters(time){
         return String(time).padStart(2, '0')
     }
 
-    verificarSeNumero(valor){
-        return isNaN(valor)
+    verifyIfIsNumber(value){
+        return isNaN(value)
     }
 
-    limparInputs(){
-        horaInput.value = ''
-        minutoInput.value = ''
-        segundosInput.value = ''
+    cleanInputs(){
+        inputHour.value = ''
+        inputMinute.value = ''
+        inputSecond.value = ''
     }
     countdown(hour,minutes,seconds){
-        this.intervalId = setInterval(() => {
+        this.interval = setInterval(() => {
             if(minutes == 0 && seconds == 0 && hour > 0){
                 hour--
                 minutes = 60
             }
-            // if(this.minutes == 0 && this.seconds == 0){
-            //     this.minutes = 60
-            // }
             if(seconds == 0 && minutes > 0){
                 minutes--
                 seconds = 60
             }
             seconds--
-            // tempo.innerHTML = `${this.formatarNumeros(this.hour)}:${this.formatarNumeros(this.minutes)}:${this.formatarNumeros(this.seconds)}`;
-            horaSpan.innerHTML = `${this.formatarNumeros(hour)}`
-            minutoSpan.innerHTML = `${this.formatarNumeros(minutes)}`
-            segundosSpan.innerHTML = `${this.formatarNumeros(seconds)}`
+            hourSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(hour)}`
+            minuteSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(minutes)}`
+            secondSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(seconds)}`
             if (hour == 0 && minutes == 0 && seconds == 0) {
-                clearInterval(this.intervalId)
+                clearInterval(this.interval)
                 return alert("fim")
              }
         }, 1000);
     }
 
-    iniciar() {
-        this.hour = parseInt(horaInput.value,10)
-        this.minutes = parseInt(minutoInput.value,10)
-        this.seconds = parseInt(segundosInput.value,10)
-        if(this.verificarSeNumero(this.hour)){
+    start() {
+        this.hour = parseInt(inputHour.value,10)
+        this.minutes = parseInt(inputMinute.value,10)
+        this.seconds = parseInt(inputSecond.value,10)
+        if(this.verifyIfIsNumber(this.hour)){
             this.hour = 0
         }
-        if(this.verificarSeNumero(this.minutes)){
+        if(this.verifyIfIsNumber(this.minutes)){
             this.minutes = 0
         }
-        if(this.verificarSeNumero(this.seconds)){
+        if(this.verifyIfIsNumber(this.seconds)){
             this.seconds = 0
         }
         if (this.hour == 0 && this.minutes == 0 && this.seconds == 0) {
            return alert("insira um tempo")
         }
         this.countdown(this.hour,this.minutes,this.seconds)
-        this.limparInputs()
+        this.cleanInputs()
        
     }
-    parar(){
-        clearInterval(this.intervalId)
-        console.log('parou')
+    stop(){
+        clearInterval(this.interval)
     }
     continue(){
-        const hour = parseInt(horaSpan.innerHTML,10)
-        const minutes = parseInt(minutoSpan.innerHTML,10)
-        const seconds = parseInt(segundosSpan.innerHTML,10)
-        console.log(hour)
-        console.log(minutes)
-        console.log(seconds)
+        const hour = parseInt(hourSpan.innerHTML,10)
+        const minutes = parseInt(minuteSpan.innerHTML,10)
+        const seconds = parseInt(secondSpan.innerHTML,10)
         this.countdown(hour,minutes,seconds)
 
     }
-    reiniciar() {
-        clearInterval(this.intervalId);
+    restart() {
+        clearInterval(this.interval);
         this.hour = 0;
         this.minutes = 0;
         this.seconds = 0;
-        horaSpan.innerHTML = `${this.formatarNumeros(this.hour)}`
-        minutoSpan.innerHTML = `${this.formatarNumeros(this.minutes)}`
-        segundosSpan.innerHTML = `${this.formatarNumeros(this.seconds)}`
+        hourSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(this.hour)}`
+        minuteSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(this.minutes)}`
+        secondSpan.innerHTML = `${this.formatNumbersToStringWithTwoCharacters(this.seconds)}`
     }
 }
 
 
 const timer = new Timer()
 
-btnIniciar.addEventListener("click",()=>{
-    timer.iniciar()
+btnStart.addEventListener("click",()=>{
+    timer.start()
 })
 
 btnStop.addEventListener("click",()=>{
-    timer.parar()
+    timer.stop()
 })
 
-btnReiniciar.addEventListener('click',()=>{
-    timer.reiniciar()
+btnRestart.addEventListener('click',()=>{
+    timer.restart()
 })
 
-btnContinuar.addEventListener("click",()=>{
+btnContinue.addEventListener("click",()=>{
     timer.continue()
 })
 
