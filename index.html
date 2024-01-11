@@ -11,11 +11,11 @@
     <main class="relogio_container">
         <div class="relogio">
           <div id="timer" class="timer">
-            <span class="span-hora">00</span>
+            <span class="span-hour">00</span>
             :
-            <span class="span-minutos">00</span>
+            <span class="span-minutes">00</span>
             :
-            <span class="span-segundos">00</span>
+            <span class="span-seconds">00</span>
           </div>
         </div>
 
@@ -23,7 +23,7 @@
             <div class="input-container">
               <label for="hour">Horas</label>
               <input type="number" name="" id="hour"
-              class="hour" max="99" min="0" />
+              class="inputHour" max="99" min="0" />
             </div>
             <div class="input-container">
               <label for="minute">Minutos</label>
@@ -31,7 +31,7 @@
                 type="number"
                 name=""
                 id="minute"
-                class="minute"
+                class="inputMinute"
                 max="59"
                 min="0"
               />
@@ -42,23 +42,23 @@
                 type="number"
                 name=""
                 id="second"
-                class="second"
+                class="inputSecond"
                 max="59"
                 min="0"
               />
             </div>
           </section>
           <div class="btn">
-            <button id="btn-start " class="iniciar">VAI</button>
+            <button id="btn-start " class="btnStart">VAI</button>
           </div>
           <div class="btn">
-            <button id="btn-start " class="parar">parar</button>
+            <button id="btn-stop " class="btnStop">parar</button>
           </div>
           <div class="btn">
-            <button id="btn-start " class="reiniciar">reiniciar</button>
+            <button id="btn-restart " class="btnRestart">reiniciar</button>
           </div>
           <div class="btn">
-            <button id="btn-start " class="continuar">Continuar</button>
+            <button id="btn-continue " class="btnContinue">Continuar</button>
           </div>
     </main>
   </body>
