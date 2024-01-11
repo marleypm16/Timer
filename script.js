@@ -3,12 +3,14 @@ const tempo = document.querySelector('.timer')
 const hora = document.querySelector('.hour')
 const minuto = document.querySelector('.minute')
 const segundos = document.querySelector('.second')
+const btnStop = document.querySelector(".parar")
 
 class Timer{
     constructor(hour,minutes,seconds){
         this.hour = parseInt(hour,10)
         this.minutes = parseInt(minutes,10)
         this.seconds = parseInt(seconds,10)
+        this.intervalId = null
     }
 
     formatarNumeros(time){
@@ -32,7 +34,7 @@ class Timer{
         if (this.hour == 0 && this.minutes == 0 && this.seconds == 0) {
            return alert("insira um tempo")
         }
-        const intervalId = setInterval(() => {
+        this.intervalId = setInterval(() => {
          
 
             if(this.minutes == 0 && this.seconds == 0 && this.hour > 0){
@@ -55,6 +57,10 @@ class Timer{
              }
         }, 1000);
     }
+    parar(){
+        clearInterval(this.intervalId)
+        console.log('parou')
+    }
 }
 
 
@@ -63,5 +69,7 @@ btnIniciar.addEventListener("click",()=>{
     const timer = new Timer(hora.value,minuto.value,segundos.value)
     timer.iniciar()
 })
+
+
 
 
