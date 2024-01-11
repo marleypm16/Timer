@@ -56,8 +56,22 @@ body {
   .align-inputs {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   
   .btn {
     text-align: center;
+  }
+
+  .disappear{
+    display: none;
+  }
+  .show{
+    display: flex;
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
