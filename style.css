@@ -46,6 +46,7 @@ body {
     font-size: 100px;
     text-align: center;
     color: white;
+    text-wrap: nowrap;
   }
   
   .input-container {
